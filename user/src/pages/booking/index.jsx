@@ -62,7 +62,7 @@ function Booking() {
                       <div className="flex flex-col gap-[1px] text-[20px] font-semibold">
                         <p>Station</p>
                         <p>Distance</p>
-                        <p>Assigned Bus</p>
+                        <p>Total Price</p>
                       </div>
                       <div className="text-[20px] font-bold flex flex-col gap-[3px]">
                         <p style={{ lineHeight: "normal" }}>-</p>
