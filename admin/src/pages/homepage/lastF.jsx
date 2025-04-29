@@ -1,10 +1,10 @@
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 
 const chartData = [
-  { name: "Colombo", value: 5554, color: "#002147 " },
-  { name: "Gampaha", value: 3424, color: "#E3AC2E" },
-  { name: "Kaluthara", value: 4347, color: "#7A0736" },
-  { name: "Galle", value: 6446, color: "#078A92" },
+  { name: "Gamapaha", value: 5554, color: "#002147 " },
+  { name: "Minuwangoda", value: 3424, color: "#E3AC2E" },
+  { name: "Yakkala", value: 4347, color: "#7A0736" },
+  { name: "Nittabuwa", value: 6446, color: "#078A92" },
 ];
 var total = chartData.reduce(
   (accumulator, city) => accumulator + city.value,
@@ -17,7 +17,7 @@ function LastF() {
       <div className="flex flex-col items-center pt-1">
         <div className="relative flex items-center flex-col">
           <div className="font-tinos font-semibold text-lg text-gray-700 text-center">
-            Top Crowed Cities
+            Top Delivery Towns
           </div>
           <div className="bg-gray-400 h-[1px] w-[60%] relative mb-2">
             <div className="absolute w-[8px] h-[8px] bg-white rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-2 border-gray-400" />

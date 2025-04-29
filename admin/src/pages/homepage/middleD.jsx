@@ -21,7 +21,7 @@ function MiddleD() {
             </div>
           </div>
           <div className="flex justify-end font-sans text-[#FEF2EC]  text-[12px]">
-            Bought Tickets-Nov
+            Total Cost - April
           </div>
         </div>
 
@@ -35,7 +35,7 @@ function MiddleD() {
             </div>
           </div>
           <div className="flex justify-end font-sans text-[#FEF2EC] text-[12px] ">
-            Scanned Tickets-Nov
+            Operational Profit
           </div>
         </div>
       </div>

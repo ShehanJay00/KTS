@@ -16,51 +16,57 @@ function LeftRowA() {
         <div className="flex flex-col items-center h-full w-full gap-5 px-5 ">
           <div className="bg-white h-full w-full rounded-xl flex flex-col px-4 py- gap-2 justify-center ">
             <div className="flex justify-between font-tinos ">
-              <div className="text-lg text-gray-900 font-light">Revenue</div>
+              <div className="text-lg text-gray-900 font-light">
+                Journey Efficiency
+              </div>
               <div className="text-xl text-main_blue">
                 <GiReceiveMoney />
               </div>
             </div>
             <div className="flex justify-between items-center">
-              <div className="text-gray-700 text-xl">Rs.563603.34</div>
+              <div className="text-gray-700 text-xl">85.343434%</div>
               <div className="text-main_blue text-sm">(-3%)</div>
             </div>
           </div>
           <div className="bg-white h-full w-full rounded-xl flex flex-col px-4 py- gap-2 justify-center ">
             <div className="flex justify-between font-tinos ">
-              <div className="text-lg text-gray-900 font-light">Costs</div>
+              <div className="text-lg text-gray-900 font-light">
+                Safe Deliveries
+              </div>
               <div className="text-xl text-main_blue">
                 <FaMoneyBillTrendUp />
               </div>
             </div>
             <div className="flex justify-between items-center">
-              <div className="text-gray-700 text-xl">Rs.45745.00</div>
+              <div className="text-gray-700 text-xl">75223</div>
               <div className="text-main_blue text-sm">(+6%)</div>
             </div>
           </div>{" "}
           <div className="bg-white h-full w-full rounded-xl flex flex-col px-4 py- gap-2 justify-center ">
             <div className="flex justify-between font-tinos ">
-              <div className="text-lg text-gray-900 font-light">Profit</div>
+              <div className="text-lg text-gray-900 font-light">
+                Late Deliveries
+              </div>
               <div className="text-xl text-main_blue">
                 <FaMoneyCheckAlt />
               </div>
             </div>
             <div className="flex justify-between items-center">
-              <div className="text-gray-700 text-xl">Rs.6907757.55</div>
+              <div className="text-gray-700 text-xl">454</div>
               <div className="text-main_blue text-sm">(-7%)</div>
             </div>
           </div>{" "}
           <div className="bg-white h-full w-full rounded-xl flex flex-col px-4 py- gap-2 justify-center ">
             <div className="flex justify-between font-tinos ">
               <div className="text-lg text-gray-900 font-light">
-                Average Journeys
+                Canceled Deliveries
               </div>
               <div className="text-xl text-main_blue">
                 <FaBusAlt />
               </div>
             </div>
             <div className="flex justify-between items-center">
-              <div className="text-gray-700 text-xl">673</div>
+              <div className="text-gray-700 text-xl">656</div>
               <div className="text-main_blue text-sm">(+12%)</div>
             </div>
           </div>

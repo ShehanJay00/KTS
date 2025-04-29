@@ -52,12 +52,12 @@ function MiddleD() {
         </div>
         <div className="w-full px-10 flex flex-col gap-2 mt-1">
           <div className="bg-[#F0F0F0] py-1 flex justify-between px-3 rounded-lg shadow-xl text-gray-800  text-sm border-2 border-gray-200">
-            <div>Total Presence</div>
+            <div>Active Drivers</div>
 
-            <div>1010</div>
+            <div>600</div>
           </div>
           <div className="bg-[#F0F0F0] py-1 flex justify-between px-3 rounded-lg shadow-xl text-gray-800  text-sm border-2 border-gray-200">
-            <div>Safe Absence</div>
+            <div>Vehicles in Use</div>
 
             <div>94</div>
           </div>

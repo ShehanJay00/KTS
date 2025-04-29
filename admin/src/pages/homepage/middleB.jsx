@@ -11,7 +11,7 @@ function MiddleB() {
       <div className="flex justify-between items-center h-full pl-7 pr-7 gap-14 pt-1">
         <div className="chart  h-full  flex flex-col  items-center relative">
           <div className="font-tinos font-semibold text-lg text-gray-700">
-            Journey Status
+            Delivery Status
           </div>
           <div className="bg-gray-400 h-[1px] w-[60%] relative mb-1">
             <div className="absolute w-[8px] h-[8px] bg-white rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-2 border-gray-400" />
@@ -54,17 +54,17 @@ function MiddleB() {
 
         <div className="flex flex-col flex-1 gap-3 font-openSans ">
           <div className="bg-[#F0F0F0] py-2 flex justify-between px-3 rounded-lg shadow-xl text-gray-800  text-sm border-2 border-gray-200">
-            <div>Safe Journeys</div>
+            <div>Successful Deliveries</div>
 
             <div>584</div>
           </div>
           <div className="bg-[#F0F0F0] py-2 flex justify-between px-3 rounded-lg shadow-xl text-gray-800   text-sm border-2 border-gray-200">
-            <div>Late Journeys</div>
+            <div>Missed Deliveries</div>
 
             <div>104</div>
           </div>
           <div className="bg-[#F0F0F0] py-2 flex justify-between px-3 rounded-lg shadow-xl text-gray-800  text-sm border-2 border-gray-200">
-            <div>Cancel Journeys</div>
+            <div>Late Deliveries</div>
 
             <div>43</div>
           </div>

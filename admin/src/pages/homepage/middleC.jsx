@@ -11,87 +11,87 @@ import {
 const data = [
   {
     name: "Nov",
-    Colombo: 2400,
-    Kandy: 2600,
-    Polonnaruwa: 3400,
-    Ampara: 6369,
+    Gamapaha: 2400,
+    Minuwangoda: 2600,
+    Yakkala: 3400,
+    Nittabuwa: 6369,
   },
   {
     name: "Dec",
-    Colombo: 3400,
-    Kandy: 2550,
-    Polonnaruwa: 1400,
-    Ampara: 4529,
+    Gamapaha: 3400,
+    Minuwangoda: 2550,
+    Yakkala: 1400,
+    Nittabuwa: 4529,
   },
   {
     name: "Jan",
-    Colombo: 1800,
-    Kandy: 2800,
-    Polonnaruwa: 4400,
-    Ampara: 1869,
+    Gamapaha: 1800,
+    Minuwangoda: 2800,
+    Yakkala: 4400,
+    Nittabuwa: 1869,
   },
   {
     name: "Feb",
-    Colombo: 4580,
-    Kandy: 2300,
-    Polonnaruwa: 2400,
-    Ampara: 2454,
+    Gamapaha: 4580,
+    Minuwangoda: 2300,
+    Yakkala: 2400,
+    Nittabuwa: 2454,
   },
   {
     name: "Mar",
-    Colombo: 4500,
-    Kandy: 6400,
-    Polonnaruwa: 2800,
-    Ampara: 3389,
+    Gamapaha: 4500,
+    Minuwangoda: 6400,
+    Yakkala: 2800,
+    Nittabuwa: 3389,
   },
   {
     name: "Apr",
-    Colombo: 4000,
-    Kandy: 2400,
-    Polonnaruwa: 2400,
-    Ampara: 4555,
+    Gamapaha: 4000,
+    Minuwangoda: 2400,
+    Yakkala: 2400,
+    Nittabuwa: 4555,
   },
   {
     name: "May",
-    Colombo: 3000,
-    Kandy: 1398,
-    Polonnaruwa: 2210,
-    Ampara: 3339,
+    Gamapaha: 3000,
+    Minuwangoda: 1398,
+    Yakkala: 2210,
+    Nittabuwa: 3339,
   },
   {
     name: "Jun",
-    Colombo: 2000,
-    Kandy: 6800,
-    Polonnaruwa: 2290,
-    Ampara: 2339,
+    Gamapaha: 2000,
+    Minuwangoda: 6800,
+    Yakkala: 2290,
+    Nittabuwa: 2339,
   },
   {
     name: "jul",
-    Colombo: 2780,
-    Kandy: 3908,
-    Polonnaruwa: 2000,
-    Ampara: 1111,
+    Gamapaha: 2780,
+    Minuwangoda: 3908,
+    Yakkala: 2000,
+    Nittabuwa: 1111,
   },
   {
     name: "Aug",
-    Colombo: 1890,
-    Kandy: 4800,
-    Polonnaruwa: 2181,
-    Ampara: 4555,
+    Gamapaha: 1890,
+    Minuwangoda: 4800,
+    Yakkala: 2181,
+    Nittabuwa: 4555,
   },
   {
     name: "Sep",
-    Colombo: 2390,
-    Kandy: 3800,
-    Polonnaruwa: 2500,
-    Ampara: 4539,
+    Gamapaha: 2390,
+    Minuwangoda: 3800,
+    Yakkala: 2500,
+    Nittabuwa: 4539,
   },
   {
     name: "Oct",
-    Colombo: 3490,
-    Kandy: 4300,
-    Polonnaruwa: 2100,
-    Ampara: 6369,
+    Gamapaha: 3490,
+    Minuwangoda: 4300,
+    Yakkala: 2100,
+    Nittabuwa: 6369,
   },
 ];
 
@@ -132,25 +132,25 @@ function MiddleC() {
                 wrapperStyle={{ fontSize: "12px", fontFamily: "roboto" }}
               />
               <Line
-                dataKey="Kandy"
+                dataKey="Gampaha"
                 stroke="#002147"
                 dot={false}
                 strokeWidth={2}
               />
               <Line
-                dataKey="Colombo"
+                dataKey="Yakkala"
                 stroke="#7A0736"
                 dot={false}
                 strokeWidth={2}
               />
               <Line
-                dataKey="Polonnaruwa"
+                dataKey="Minuwangoda"
                 stroke="#028C98"
                 dot={false}
                 strokeWidth={2}
               />
               <Line
-                dataKey="Ampara"
+                dataKey="Nittabuwa"
                 stroke="#E3AC2E"
                 dot={false}
                 strokeWidth={2}
