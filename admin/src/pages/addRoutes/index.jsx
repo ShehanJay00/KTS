@@ -9,8 +9,8 @@ function AddRoute() {
 
   return (
     <div className="px-[40px]">
-      <p className="text-main_blue text-[37px] font-semibold font-barlows   leading-6 ">
-        Manage Route
+      <p className="text-main_blue text-[37px] font-semibold font-barlows   leading-6 mt-[30px]">
+        Manage Routes
       </p>
       {isLoaded ? <Map /> : <h1>not loaded</h1>}
     </div>

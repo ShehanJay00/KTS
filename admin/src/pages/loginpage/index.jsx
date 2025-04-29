@@ -121,7 +121,8 @@ function Login() {
           />
           <div className="font-roboto_slab text-[30px] font-bold flex flex-col items-center leading-[92%]">
             <p>Welcome to the</p>
-            <p>Logistics Decision Support System</p>
+            <p>Logistics Decision Support </p>
+            <p>System</p>
           </div>
         </div>
         <div className="mt-[40px] w-full items-center">
