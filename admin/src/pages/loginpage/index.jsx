@@ -118,7 +118,7 @@ function Login() {
             className="w-[210px]"
           />
           <div className="font-roboto_slab text-[30px] font-bold flex flex-col items-center leading-[92%]">
-            <p>General</p>
+            <p>General123</p>
             <p>Sir John Kotelawala</p>
             <p>Defence University</p>
             <p>Transport Management System</p>
