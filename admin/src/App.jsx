@@ -31,17 +31,11 @@ function App() {
 
         <div className=" min-h-full">
           <Routes>
-            <Route
-              path="/"
-              element={user ? <HomePage /> : <Navigate to="/login" />}
-            />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/add-routes" element={<AddRoute />} />
             <Route
               path="/routes"
               element={user ? <CurrentRoutes /> : <Navigate to="/login" />}
-            />
-            <Route
-              path="/add-routes"
-              element={user ? <AddRoute /> : <Navigate to="/login" />}
             />
             <Route
               path="/journey"

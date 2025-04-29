@@ -4,12 +4,14 @@ import { useState } from "react";
 import userAxios from "../../baseURL";
 import { useUserContext } from "../../hooks/useUserAuthContext";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const normalStyle =
   "w-full  h-[56px] pl-[20px] py-[7px] font-normal text-sm text-[#515151] focus:outline-none ";
 const errorStyle =
   "w-full  h-[56px] pl-[20px] py-[7px] font-normal text-sm text-red-400 focus:outline-none ";
 function Login() {
+  const navigate = useNavigate();
   const { dispatch } = useUserContext();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -107,21 +109,19 @@ function Login() {
         className="flex-1 bg-no-repeat bg-cover bg-center"
         style={{
           backgroundImage:
-            "url(https://res.cloudinary.com/dnoobzfxo/image/upload/v1701395916/valentyn-chernetskyi-m0_o8QB-JGg-unsplash_1_jcfwxf.png)",
+            "url(https://res.cloudinary.com/dtpdr50vj/image/upload/v1745949767/futuristic-technology-concept_blrf5e.jpg)",
         }}
       ></div>
       <div className="w-[34%] flex items-center flex-col justify-center">
         <div className="flex flex-col items-center">
           <img
-            src="https://res.cloudinary.com/dnoobzfxo/image/upload/v1701275328/Kotelawala_Defence_University_crest-removebg-preview_1_qprg9r.png"
+            src="https://res.cloudinary.com/dtpdr50vj/image/upload/v1745949672/Screenshot_2025-04-29_at_23.20.18_tefap7.png"
             alt=""
-            className="w-[210px]"
+            className="w-[310px] mb-[10px]"
           />
           <div className="font-roboto_slab text-[30px] font-bold flex flex-col items-center leading-[92%]">
-            <p>General123</p>
-            <p>Sir John Kotelawala</p>
-            <p>Defence University</p>
-            <p>Transport Management System</p>
+            <p>Welcome to the</p>
+            <p>Logistics Decision Support System</p>
           </div>
         </div>
         <div className="mt-[40px] w-full items-center">
@@ -134,7 +134,7 @@ function Login() {
                     emailError ? "text-red-500" : "text-[#383838]"
                   }`}
                 >
-                  Manager Email Address
+                  Admin Email Address
                 </label>
                 <input
                   id="email"
@@ -218,9 +218,9 @@ function Login() {
               <div className="w-[75%] ">
                 <button
                   type="submit"
-                  className="w-full text-white bg-main_blue h-[60px] rounded-lg text-[20px] font-medium"
+                  className="w-full text-white bg-[#2061A9] h-[60px] rounded-lg text-[20px] font-medium"
                   onClick={(e) => {
-                    login(e);
+                    navigate("/");
                   }}
                 >
                   Login
