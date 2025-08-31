@@ -324,7 +324,7 @@ function AddBusPage() {
             </div>
             <div className="flex flex-col flex-1 gap-[5px]">
               <label htmlFor="conductor" className={normalLabelStyle}>
-                Conductor
+                Supporter
               </label>
               <select
                 id="conductor"
@@ -335,7 +335,7 @@ function AddBusPage() {
                 onChange={(e) => setConductor(e.target.value)}
               >
                 <option value="0" className="">
-                  Select a Conductor
+                  Select a Supporter
                 </option>
 
                 {employees &&

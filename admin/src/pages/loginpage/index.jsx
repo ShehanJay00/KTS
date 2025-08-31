@@ -220,9 +220,7 @@ function Login() {
                 <button
                   type="submit"
                   className="w-full text-white bg-[#2061A9] h-[60px] rounded-lg text-[20px] font-medium"
-                  onClick={(e) => {
-                    navigate("/");
-                  }}
+                  onClick={login}
                 >
                   Login
                 </button>

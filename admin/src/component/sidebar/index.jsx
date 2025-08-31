@@ -56,19 +56,14 @@ const links = [
     title: "Analytics",
     links: [
       {
-        name: "Users",
+        name: "Customers",
         icon: <FaUsers />,
         nav: "users",
       },
       {
-        name: "Tickets",
-        icon: <BsFillTicketPerforatedFill />,
-        nav: "tickets",
-      },
-      {
-        name: "Cost Report",
+        name: "Orders",
         icon: <FaMoneyCheckDollar />,
-        nav: "cost-report",
+        nav: "orders",
       },
     ],
   },
@@ -76,7 +71,7 @@ const links = [
     title: "Notices",
     links: [
       {
-        name: "Bus Notices",
+        name: "Vehicle Notices",
         icon: <MdOutlineBusAlert />,
         nav: "bus-notices",
       },
@@ -86,7 +81,7 @@ const links = [
         nav: "add-notices",
       },
       {
-        name: "User Inquiries",
+        name: "Customer Inquiries",
         icon: <FaHospitalUser />,
         nav: "user-inquiries",
       },
@@ -96,12 +91,12 @@ const links = [
     title: "Management",
     links: [
       {
-        name: "Buses",
+        name: "Vehicles",
         icon: <FaBusAlt />,
         nav: "buses",
       },
       {
-        name: "Insert Buses",
+        name: "Insert Vehicles",
         icon: <RiBusWifiLine />,
         nav: "insert-buses",
       },

@@ -85,7 +85,7 @@ function EmployeesPage() {
     },
     {
       field: "mobile",
-      headerName: "mobile Number",
+      headerName: "Mobile Number",
       width: 90,
       flex: 0.5,
       align: "center",
@@ -93,7 +93,6 @@ function EmployeesPage() {
       type: "string",
       renderCell: (params) => <>+94{params.row.mobile}</>,
     },
-
     {
       field: "role",
       headerName: "Position",
@@ -101,6 +100,11 @@ function EmployeesPage() {
       flex: 0.3,
       align: "center",
       headerAlign: "center",
+      renderCell: (params) => (
+        <span>
+          {params.row.role === "conductor" ? "supporter" : params.row.role}
+        </span>
+      ),
     },
     {
       field: "edit",

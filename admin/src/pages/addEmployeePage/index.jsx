@@ -28,6 +28,7 @@ function AddEmployeePage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("hit");
 
     if (
       !employeeId ||
@@ -257,7 +258,7 @@ function AddEmployeePage() {
                     Select a role...
                   </option>
                   <option value="driver">Driver</option>
-                  <option value="conductor">Conductor</option>
+                  <option value="conductor">Supporter</option>
                 </select>
               </div>
             </div>
