@@ -1,6 +1,6 @@
 docker build -t shehanjay00/backend ./backend
 docker build \
-  --build-arg VITE_GOOGLE_API_KEY=AIzaSyD6BxQK32kXIjqVFFQZOWmkML7kl3oMIcc \
+  --build-arg VITE_GOOGLE_API_KEY=key \
   -t shehanjay00/frontend .
 
 
