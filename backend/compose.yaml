@@ -1,0 +1,9 @@
+name: kts
+
+services:
+  backend:
+    image: shehanjay00/backend:latest
+    ports:
+      - 4000:4000
+    env_file:
+      - .env

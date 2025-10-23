@@ -1,0 +1,7 @@
+name: kts
+
+services:
+  admin:
+    image: shehanjay00/frontend:latest
+    ports:
+      - 3000:80

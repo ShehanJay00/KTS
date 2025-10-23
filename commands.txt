@@ -1,0 +1,16 @@
+docker build -t shehanjay00/backend ./backend
+docker build \
+  --build-arg VITE_GOOGLE_API_KEY=AIzaSyD6BxQK32kXIjqVFFQZOWmkML7kl3oMIcc \
+  -t shehanjay00/frontend .
+
+
+docker login -u shehanjay00
+
+docker push shehanjay00/backend
+docker push shehanjay00/frontend
+
+# add a elastic ip
+# create a vm
+
+docker compose up  -d  --build
+docker compose down
