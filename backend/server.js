@@ -30,8 +30,14 @@ app.use("/api/tickets", ticketRoutes);
 //ERROR Middleware
 app.use(errorHandler);
 
-connectDb().then(async () => {
-  app.listen(process.env.PORT, () => {
-    console.log(`Server running on port ${process.env.PORT}`);
+if (require.main === module) {
+  // Only connect to DB and start the server when server.js is run directly.
+  connectDb().then(async () => {
+    app.listen(process.env.PORT, () => {
+      console.log(`Server running on port ${process.env.PORT}`);
+    });
   });
-});
+}
+
+// export app for testing (so tests can import without starting the server or connecting DB)
+module.exports = app;
