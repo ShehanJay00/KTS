@@ -171,7 +171,7 @@ function AddBusPage() {
   return (
     <div className="mx-[80px]">
       <p className="text-main_blue text-[37px] font-semibold font-barlows  mb-[15px] leading-6">
-        Insert Bus Details
+        Insert Vehicle Details
       </p>
 
       <form onSubmit={handleSubmit}>
@@ -243,7 +243,7 @@ function AddBusPage() {
             </div>
             <div className="flex flex-col flex-1 gap-[5px] ">
               <label htmlFor="registrationNumber" className={normalLabelStyle}>
-                Seat Capacity
+                Jikm Capacity
               </label>
               <div className="w-full  h-full rounded-md border-[1px] border-gray-300 text-sm text-[#000] font-normal flex justify-between overflow-hidden pl-3">
                 <input
