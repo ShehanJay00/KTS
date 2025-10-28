@@ -243,7 +243,7 @@ function AddBusPage() {
             </div>
             <div className="flex flex-col flex-1 gap-[5px] ">
               <label htmlFor="registrationNumber" className={normalLabelStyle}>
-                Jikm Capacity
+                Capacity
               </label>
               <div className="w-full  h-full rounded-md border-[1px] border-gray-300 text-sm text-[#000] font-normal flex justify-between overflow-hidden pl-3">
                 <input
