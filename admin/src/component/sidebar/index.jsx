@@ -20,7 +20,7 @@ const links = [
     title: "Dashboard",
     links: [
       {
-        name: "KTS-Dashboard",
+        name: "KPI-Dashboard",
         icon: <MdDashboard />,
         nav: "",
       },
@@ -52,42 +52,8 @@ const links = [
       },
     ],
   },
-  {
-    title: "Analytics",
-    links: [
-      {
-        name: "Customers",
-        icon: <FaUsers />,
-        nav: "users",
-      },
-      {
-        name: "Orders",
-        icon: <FaMoneyCheckDollar />,
-        nav: "orders",
-      },
-    ],
-  },
-  {
-    title: "Notices",
-    links: [
-      {
-        name: "Vehicle Notices",
-        icon: <MdOutlineBusAlert />,
-        nav: "bus-notices",
-      },
-      {
-        name: "Add Notices",
-        icon: <MdOutlinePostAdd />,
-        nav: "add-notices",
-      },
-      {
-        name: "Customer Inquiries",
-        icon: <FaHospitalUser />,
-        nav: "user-inquiries",
-      },
-    ],
-  },
-  {
+  
+    {
     title: "Management",
     links: [
       {
@@ -109,6 +75,43 @@ const links = [
         name: "Insert Employees",
         icon: <FaUserCog />,
         nav: "insert-employees",
+      },
+    ],
+  },
+
+  {
+    title: "Analytics",
+    links: [
+      {
+        name: "Customers",
+        icon: <FaUsers />,
+        nav: "users",
+      },
+      {
+        name: "Orders",
+        icon: <FaMoneyCheckDollar />,
+        nav: "Order Records",
+      },
+    ],
+  },
+  
+  {
+    title: "Notices",
+    links: [
+      {
+        name: "Vehicle Notices",
+        icon: <MdOutlineBusAlert />,
+        nav: "bus-notices",
+      },
+      {
+        name: "Add Notices",
+        icon: <MdOutlinePostAdd />,
+        nav: "add-notices",
+      },
+      {
+        name: "Customer Inquiries",
+        icon: <FaHospitalUser />,
+        nav: "user-inquiries",
       },
     ],
   },
