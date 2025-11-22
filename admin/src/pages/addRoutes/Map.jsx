@@ -27,10 +27,9 @@ function Map() {
   const mapRef = useRef();
 
   const center = useMemo(
-    () => ({ lat: 6.833813409471106, lng: 79.88634319394335 }),
+    () => ({ lat: 7.091634533102047, lng: 79.99258716627725 }),
     []
   );
-
   const options = useMemo(
     () => ({
       mapId: "958725da470cbe5e",

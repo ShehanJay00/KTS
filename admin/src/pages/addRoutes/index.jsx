@@ -1,5 +1,6 @@
 import { useJsApiLoader } from "@react-google-maps/api";
 import Map from "./Map";
+import OrderTable from "./orderTable";
 
 function AddRoute() {
   const { isLoaded } = useJsApiLoader({
@@ -13,6 +14,7 @@ function AddRoute() {
         Manage Routes
       </p>
       {isLoaded ? <Map /> : <h1>not loaded</h1>}
+      <OrderTable />
     </div>
   );
 }
