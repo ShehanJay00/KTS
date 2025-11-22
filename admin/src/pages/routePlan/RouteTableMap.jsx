@@ -4,6 +4,7 @@ import {
   GoogleMap,
   Marker,
   DirectionsRenderer,
+  Polyline,
 } from "@react-google-maps/api";
 
 function RouteTableMap({ googleRoutes, stations, startLocation }) {
@@ -31,6 +32,19 @@ function RouteTableMap({ googleRoutes, stations, startLocation }) {
 
   const onLoad = useCallback((map) => (mapRef.current = map), []);
 
+  // Build a path that connects startLocation then all stations in order.
+  const path = useMemo(() => {
+    if (!startLocation) return [];
+    const points = [];
+    if (startLocation.latlng) points.push(startLocation.latlng);
+    if (stations && stations.length > 0) {
+      stations.forEach((s) => {
+        points.push({ lat: s.lat, lng: s.lng });
+      });
+    }
+    return points;
+  }, [startLocation, stations]);
+
   return (
     <div className="w-full h-full rounded-xl overflow-hidden">
       {isLoaded ? (
@@ -41,20 +55,34 @@ function RouteTableMap({ googleRoutes, stations, startLocation }) {
           options={options}
           onLoad={onLoad}
         >
-          {/* {googleRoutes && (
-            <DirectionsRenderer
-              options={{
-                directions: googleRoutes.directions,
-                routeIndex: googleRoutes.routeId,
-                suppressMarkers: true,
-                polylineOptions: {
-                  strokeColor: "blue",
-                  strokeWeight: 3,
-                  strokeOpacity: 0.9,
-                },
-              }}
-            />
-          )} */}
+          {/* If stations exist, render a polyline through start + stations.
+              Otherwise render the precomputed googleRoutes directions. */}
+          {stations && stations.length > 0
+            ? path &&
+              path.length > 1 && (
+                <Polyline
+                  path={path}
+                  options={{
+                    strokeColor: "blue",
+                    strokeWeight: 3,
+                    strokeOpacity: 0.9,
+                  }}
+                />
+              )
+            : googleRoutes && (
+                <DirectionsRenderer
+                  options={{
+                    directions: googleRoutes.directions,
+                    routeIndex: googleRoutes.routeId,
+                    suppressMarkers: true,
+                    polylineOptions: {
+                      strokeColor: "blue",
+                      strokeWeight: 3,
+                      strokeOpacity: 0.9,
+                    },
+                  }}
+                />
+              )}
           {center && (
             <Marker
               position={center}
@@ -76,7 +104,7 @@ function RouteTableMap({ googleRoutes, stations, startLocation }) {
                   scaledSize: new window.google.maps.Size(26, 26),
                 }}
                 label={{
-                  text: `${station.id}- ${station.price}`,
+                  text: `${station.id}`,
                   color: "white",
                   className: "font-roboto px-1 py-[2px] rounded-lg bg-red-600",
                   fontSize: "10px",
