@@ -7,7 +7,7 @@ function OrderTable() {
     {
       field: "orderID",
       headerName: "Order ID",
-      width: 150,
+      //   width: 150,
       flex: 0.1,
       align: "center",
       headerAlign: "center",
@@ -16,8 +16,8 @@ function OrderTable() {
     {
       field: "orderCapacity",
       headerName: "Order Capacity",
-      width: 150,
-      flex: 0.5,
+      //   width: 150,
+      flex: 0.1,
       align: "center",
       headerAlign: "center",
       type: "string",
@@ -25,7 +25,7 @@ function OrderTable() {
     {
       field: "timeWindow",
       headerName: "Time Window",
-      width: 200,
+      //   width: 200,
       flex: 0.1,
       align: "center",
       headerAlign: "center",
@@ -108,7 +108,7 @@ function OrderTable() {
     {
       field: "vehicles",
       headerName: "Vehicles",
-      width: 220,
+      //   width: 220,
       flex: 0.1,
       align: "center",
       headerAlign: "center",
@@ -136,7 +136,7 @@ function OrderTable() {
     {
       field: "drivers",
       headerName: "Drivers",
-      width: 220,
+      //   width: 220,
       flex: 0.1,
       align: "center",
       headerAlign: "center",
@@ -171,9 +171,19 @@ function OrderTable() {
         Vehicle Details
       </p>
 
-      <Box sx={{ display: "flex", gap: 2, alignItems: "flex-start" }}>
+      <Box
+        sx={{
+          display: "flex",
+          gap: 2,
+          alignItems: "flex-start",
+          // use a viewport-based height so both grids fit on most screens
+          height: "65vh",
+          // allow wrapping on very narrow screens
+          flexWrap: "wrap",
+        }}
+      >
         {/* Left table: multiple order rows */}
-        <Box sx={{ flex: 1, height: 520 }}>
+        <Box sx={{ flex: 1, height: "100%", minWidth: 0 }}>
           <DataGrid
             rows={leftRows}
             columns={leftColumns}
@@ -193,7 +203,8 @@ function OrderTable() {
         </Box>
 
         {/* Right table: single row with selects */}
-        <Box sx={{ flex: 1, height: 180 }}>
+        {/* fixed width for the right panel keeps layout consistent */}
+        <Box sx={{ flex: "0 0 400px", height: "30%" }}>
           <DataGrid
             rows={rightRows}
             columns={rightColumns}
