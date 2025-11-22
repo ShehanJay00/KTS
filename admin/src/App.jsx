@@ -16,6 +16,7 @@ import CurrentRoutes from "./pages/currentRoutes";
 import UsersPage from "./pages/users";
 import TicketsPage from "./pages/tickets";
 import Orders from "./pages/orders";
+import RoutePlan from "./pages/routePlan";
 
 function App() {
   const { user } = useUserContext();
@@ -77,6 +78,10 @@ function App() {
             <Route
               path="/orders"
               element={user ? <Orders /> : <Navigate to="/login" />}
+            />
+            <Route
+              path="/optimal-plan"
+              element={user ? <RoutePlan /> : <Navigate to="/login" />}
             />
             <Route
               path="/login"

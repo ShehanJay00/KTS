@@ -41,9 +41,9 @@ const links = [
         nav: "add-routes",
       },
       {
-        name: "Route Analytics",
+        name: "Optimal Plan",
         icon: <IoMdAnalytics />,
-        nav: "route-analytics",
+        nav: "optimal-plan",
       },
       {
         name: "Journey",
