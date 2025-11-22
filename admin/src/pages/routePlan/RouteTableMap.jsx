@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef } from "react";
+import { useCallback, useMemo, useRef, useState, useEffect } from "react";
 import {
   useJsApiLoader,
   GoogleMap,
@@ -16,7 +16,7 @@ function RouteTableMap({ googleRoutes, stations, startLocation }) {
   const mapRef = useRef();
 
   const center = useMemo(
-    () => ({ lat: 6.833813409471106, lng: 79.88634319394335 }),
+    () => ({ lat: 7.091634533102047, lng: 79.99258716627725 }),
     []
   );
 
@@ -32,18 +32,67 @@ function RouteTableMap({ googleRoutes, stations, startLocation }) {
 
   const onLoad = useCallback((map) => (mapRef.current = map), []);
 
-  // Build a path that connects startLocation then all stations in order.
+  // Build a path that connects center then all stations in order.
   const path = useMemo(() => {
-    if (!startLocation) return [];
     const points = [];
-    if (startLocation.latlng) points.push(startLocation.latlng);
+    if (center) points.push(center);
     if (stations && stations.length > 0) {
       stations.forEach((s) => {
         points.push({ lat: s.lat, lng: s.lng });
       });
     }
     return points;
-  }, [startLocation, stations]);
+  }, [center, stations]);
+
+  // Directions computed by DirectionsService for the multi-stop route
+  const [computedDirections, setComputedDirections] = useState(null);
+
+  // When stations change, request a driving route from `center` through all stations.
+  useEffect(() => {
+    if (!isLoaded) return;
+    if (!stations || stations.length === 0) {
+      setComputedDirections(null);
+      return;
+    }
+
+    // Prepare origin, destination and waypoints so the route follows actual roads
+    const origin = center;
+    const destination = {
+      lat: stations[stations.length - 1].lat,
+      lng: stations[stations.length - 1].lng,
+    };
+    const waypoints =
+      stations.length > 1
+        ? stations
+            .slice(0, stations.length - 1)
+            .map((s) => ({
+              location: { lat: s.lat, lng: s.lng },
+              stopover: true,
+            }))
+        : [];
+
+    const directionsService = new window.google.maps.DirectionsService();
+    directionsService.route(
+      {
+        origin,
+        destination,
+        travelMode: window.google.maps.TravelMode.DRIVING,
+        waypoints,
+        optimizeWaypoints: false,
+      },
+      (result, status) => {
+        if (
+          status === window.google.maps.DirectionsStatus.OK ||
+          status === "OK"
+        ) {
+          setComputedDirections(result);
+        } else {
+          console.error("Directions request failed due to ", status);
+          setComputedDirections(null);
+        }
+      }
+    );
+  }, [isLoaded, stations, center]);
 
   return (
     <div className="w-full h-full rounded-xl overflow-hidden">
@@ -55,10 +104,24 @@ function RouteTableMap({ googleRoutes, stations, startLocation }) {
           options={options}
           onLoad={onLoad}
         >
-          {/* If stations exist, render a polyline through start + stations.
-              Otherwise render the precomputed googleRoutes directions. */}
-          {stations && stations.length > 0
-            ? path &&
+          {/* If stations exist, first try to render a real driving route via DirectionsService
+              (computedDirections). If that isn't available, fallback to a simple polyline.
+              If no stations provided, fall back to precomputed googleRoutes directions. */}
+          {stations && stations.length > 0 ? (
+            computedDirections ? (
+              <DirectionsRenderer
+                options={{
+                  directions: computedDirections,
+                  suppressMarkers: true,
+                  polylineOptions: {
+                    strokeColor: "blue",
+                    strokeWeight: 4,
+                    strokeOpacity: 0.9,
+                  },
+                }}
+              />
+            ) : (
+              path &&
               path.length > 1 && (
                 <Polyline
                   path={path}
@@ -69,20 +132,23 @@ function RouteTableMap({ googleRoutes, stations, startLocation }) {
                   }}
                 />
               )
-            : googleRoutes && (
-                <DirectionsRenderer
-                  options={{
-                    directions: googleRoutes.directions,
-                    routeIndex: googleRoutes.routeId,
-                    suppressMarkers: true,
-                    polylineOptions: {
-                      strokeColor: "blue",
-                      strokeWeight: 3,
-                      strokeOpacity: 0.9,
-                    },
-                  }}
-                />
-              )}
+            )
+          ) : (
+            googleRoutes && (
+              <DirectionsRenderer
+                options={{
+                  directions: googleRoutes.directions,
+                  routeIndex: googleRoutes.routeId,
+                  suppressMarkers: true,
+                  polylineOptions: {
+                    strokeColor: "blue",
+                    strokeWeight: 3,
+                    strokeOpacity: 0.9,
+                  },
+                }}
+              />
+            )
+          )}
           {center && (
             <Marker
               position={center}
