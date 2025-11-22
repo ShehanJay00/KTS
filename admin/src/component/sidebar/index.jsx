@@ -20,7 +20,7 @@ const links = [
     title: "Dashboard",
     links: [
       {
-        name: "KPI-Dashboard",
+        name: "Key Metrics",
         icon: <MdDashboard />,
         nav: "",
       },
@@ -44,12 +44,7 @@ const links = [
         name: "Optimal Plan",
         icon: <IoMdAnalytics />,
         nav: "optimal-plan",
-      },
-      {
-        name: "Journey",
-        icon: <GiJourney />,
-        nav: "journey",
-      },
+      }
     ],
   },
   
@@ -94,7 +89,7 @@ const links = [
       },
     ],
   },
-  
+
   {
     title: "Notices",
     links: [
