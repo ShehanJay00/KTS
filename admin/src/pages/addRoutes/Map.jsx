@@ -289,7 +289,7 @@ function Map() {
           draggable: true,
           theme: "colored",
         });
-        navigate("/routes");
+        navigate("/optimal-plan");
       }
     } catch (err) {
       console.log(err);

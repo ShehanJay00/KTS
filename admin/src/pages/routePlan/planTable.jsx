@@ -51,6 +51,33 @@ function PlanTable() {
       align: "center",
       headerAlign: "center",
       type: "string",
+      renderCell: (params) => {
+        // consider any non-empty / non-'None' / non-'0' value as a violation
+        const raw = params.value;
+        const isViolation =
+          raw !== null &&
+          raw !== undefined &&
+          raw !== "None" &&
+          raw !== "0" &&
+          raw !== 0 &&
+          raw !== "";
+        const label = isViolation ? "Yes" : "No";
+        const bg = isViolation ? "#ffcccc" : "#ccffcc";
+        return (
+          <Box
+            sx={{
+              width: "100%",
+              textAlign: "center",
+              backgroundColor: bg,
+              color: "#000",
+              borderRadius: "6px",
+              padding: "6px 8px",
+            }}
+          >
+            {label}
+          </Box>
+        );
+      },
     },
   ];
 
