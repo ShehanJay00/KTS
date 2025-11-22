@@ -124,7 +124,7 @@ function Sidebar() {
     <div className="bg-main_blue h-full overflow-y-scroll">
       <div className="pr-[10px] pt-[10px]">
         <img
-          src="https://kdu.ac.lk/wp-content/uploads/2023/06/kdu-logo2.png.webp"
+          src="https://res.cloudinary.com/dtpdr50vj/image/upload/v1745949672/Screenshot_2025-04-29_at_23.20.18_tefap7.png"
           alt=""
           className="w-[294px]"
         />
