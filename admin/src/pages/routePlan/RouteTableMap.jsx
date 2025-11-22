@@ -41,7 +41,7 @@ function RouteTableMap({ googleRoutes, stations, startLocation }) {
           options={options}
           onLoad={onLoad}
         >
-          {googleRoutes && (
+          {/* {googleRoutes && (
             <DirectionsRenderer
               options={{
                 directions: googleRoutes.directions,
@@ -54,7 +54,7 @@ function RouteTableMap({ googleRoutes, stations, startLocation }) {
                 },
               }}
             />
-          )}
+          )} */}
           {center && (
             <Marker
               position={center}
