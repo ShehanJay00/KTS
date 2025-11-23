@@ -15,7 +15,7 @@ function OrderTable() {
     },
     {
       field: "orderCapacity",
-      headerName: "Order Capacity",
+      headerName: "Order Capacity (Units)",
       //   width: 150,
       flex: 0.1,
       align: "center",
@@ -86,12 +86,16 @@ function OrderTable() {
 
   // Options for the selects in the right table
   const vehicleOptions = [
-    "VID-343434",
-    "VID-123456",
-    "VID-789101",
-    "VID-555555",
+    "V0001",
+    "V0002",
+    "V0003",
+    "V0004",
+    "V0005",
+    "V0006",
+    "V0007",
+    "V0008",
   ];
-  const driverOptions = ["John Doe", "Jane Smith", "Ali Khan", "Maria Lopez"];
+  const driverOptions = ["Dhanuka Perera", "Kasun Jayawardena", "Nimal Bandara"];
 
   // Keep selection state for the single-row right table
   const [selection, setSelection] = useState({
